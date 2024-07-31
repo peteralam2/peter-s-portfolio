@@ -1,0 +1,263 @@
+:root{
+  --base-color: white;
+  --base-variant: #e8e9ed;
+  --text-color: #111528;
+  --secondary-text: #232738;
+  --primary-color: #3a435d;
+  --accent-color: #0071ff;
+  --nav-color:rgba(255, 255, 255, 0.2);
+}
+.darkmode{
+  --base-color: #070b1d;
+  --base-variant: #101425;
+  --text-color: #ffffff;
+  --secondary-text: #a4a5b8;
+  --primary-color: #3a435d;
+  --accent-color: #0071ff;
+  --nav-color:rgba(7, 11, 29, 0.8);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-color);
+  background: var(--base-variant);
+  line-height: 2;
+}
+
+svg{
+  fill: var(--text-color);
+}
+
+nav{
+  background-color: var(--base-color);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav li{
+  height: 50px;
+}
+
+nav a{
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+}
+
+nav a:hover{
+  background-color: var(--base-variant);
+  color: var(--accent-color);
+}
+
+nav li:first-child{
+  margin-right: auto;
+  font-family: monospace;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+#theme-switch{
+  height: 30px;
+  width: 100px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-color);
+}
+
+#theme-switch svg{
+  fill: var(--text-color);
+}
+
+#theme-switch svg:last-child{
+  opacity: 0.1;
+}
+
+.darkmode #theme-switch svg:first-child{
+  opacity: 0.1;
+}
+
+.darkmode #theme-switch svg:last-child{
+  opacity: 1;
+}
+
+button{
+  padding: .8em 2em;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  font: inherit;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: var(--nav-color);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0  10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items:flex-end;
+  justify-content: flex-start;
+  display: none;
+}
+
+.sidebar li{
+  width:100%;
+}
+
+.sidebar a{
+  width: 100%;
+}
+
+.menu-btn{
+  display: none;
+}
+
+.about{
+  display: flex;
+  flex-direction: row ;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: slideLeftToRight 4s linear forwards;
+}
+
+@keyframes slideLeftToRight {
+  0% {
+    left: -100px; /* Start off-screen to the left */
+    opacity: 0;
+  }
+  50%{
+    left: -50px;
+    opacity: 0.5;
+  }
+  100% {
+    left: 0;
+    opacity: 1; /* Stay visible for most of the animation */
+  }
+}
+.animated-img{
+  width: 400px;
+  height: 400px;
+}
+
+dotlottie-player {
+  width: 100%;
+  height: 100%;
+}
+
+.about p{
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+  letter-spacing: 2px;
+  max-width: 700px;
+  text-align: center;
+  margin: 0 5%;
+}
+
+.h2-anim{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2{
+  font-family: monospace;
+  position: relative;
+  margin-top: 30px;
+  position: relative;
+  font-size: 3rem;
+  -webkit-text-stroke: 0.2rem var(--secondary-text);
+}
+
+h2::before{
+  font-family: monospace;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: var(--accent-color);
+  -webkit-text-stroke: 0rem var(--secondary-text);
+  border-right: 2px solid var(--accent-color);
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate{
+  0%,10%,100%{
+    width: 0;
+  }
+  70%,90%{
+    width: 100%;
+  }
+}
+
+
+
+@media screen and (max-width: 768px){
+  .hideOnMobile{
+    display: none;
+  }
+  .menu-btn{
+    display: block;
+  }
+
+  .about p{
+    font-size: 1 rem;
+  }
+
+  .animated-img{
+  
+  }
+}
+
+@media screen and (max-width:800px){
+  .about{
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .sidebar{
+    width: 100%;
+  }
+
+  #theme-switch{
+    width:40px ;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .animated-img{
+    display: none;
+  }
+}
