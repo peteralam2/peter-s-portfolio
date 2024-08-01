@@ -436,7 +436,7 @@ body a{
 }
 
 
-@media screen and (max-width: 478px){
+@media screen and (max-width: 400px){
   .sidebar{
     width: 100%;
   }
