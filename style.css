@@ -24,10 +24,10 @@
 
 body{
   min-height: 100vh;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Titillium Web", sans-serif;
   color: var(--text-color);
   background: var(--base-variant);
-  line-height: 2;
+  line-height: 1.5;
 }
 
 svg{
@@ -137,28 +137,16 @@ button{
 }
 
 .about{
-  display: flex;
-  flex-direction: row ;
+  display: grid;
+  place-items: center;
   align-items: center;
-  justify-content: center;
-  opacity: 0;
-  animation: slideLeftToRight 4s linear forwards;
+  grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+  min-height: 100vh;
+  font-size: 1.7rem;
+  line-height: 1.8;
+  overflow: hidden;
 }
 
-@keyframes slideLeftToRight {
-  0% {
-    left: -100px; /* Start off-screen to the left */
-    opacity: 0;
-  }
-  50%{
-    left: -50px;
-    opacity: 0.5;
-  }
-  100% {
-    left: 0;
-    opacity: 1; /* Stay visible for most of the animation */
-  }
-}
 .animated-img{
   width: 400px;
   height: 400px;
@@ -170,9 +158,8 @@ dotlottie-player {
 }
 
 .about p{
-  font-family: "Edu AU VIC WA NT Hand", cursive;
   letter-spacing: 2px;
-  max-width: 700px;
+  max-width: auto;
   text-align: center;
   margin: 0 5%;
 }
@@ -186,7 +173,7 @@ dotlottie-player {
 h2{
   font-family: monospace;
   position: relative;
-  margin-top: 30px;
+  margin: 30px auto;
   position: relative;
   font-size: 3rem;
   -webkit-text-stroke: 0.2rem var(--secondary-text);
@@ -207,6 +194,71 @@ h2::before{
   animation: animate 6s linear infinite;
 }
 
+.list-of-projects{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 34px;
+  row-gap: 16px;
+  overflow: hidden;
+}
+
+.project-card{
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  border-radius: 20px;
+  border: 1px solid #f3f3f3;
+  box-shadow: 2px 2px 5px 0px var(--nav-color)
+}
+
+.project-card h3{
+  margin: 0 0 5px 10px;
+  font-size: 1.625rem;
+  font-weight: 600;
+}
+
+.project-card:nth-child(2){
+  transition-delay: 200ms;
+}
+
+.project-card:nth-child(3){
+  transition-delay: 400ms;
+}
+
+.project-card:nth-child(4){
+  transition-delay: 600ms;
+}
+
+
+.hidden-l{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.hidden-r{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(100%);
+  transition: all 1s;
+}
+
+.hidden-b{
+  opacity: 0;
+  filter: blur(5px);
+  scale: 0;
+  transition: all 1s;
+}
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  scale: 1;
+}
+
+
 @keyframes animate{
   0%,10%,100%{
     width: 0;
@@ -217,6 +269,12 @@ h2::before{
 }
 
 
+@media screen and (max-width: 1200px){
+  .about p{
+    font-size: 1.2rem;
+  }
+}
+
 
 @media screen and (max-width: 768px){
   .hideOnMobile{
@@ -226,24 +284,14 @@ h2::before{
     display: block;
   }
 
-  .about p{
-    font-size: 1 rem;
-  }
-
   .animated-img{
   
   }
 }
 
 @media screen and (max-width:800px){
-  .about{
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 400px){
-  .sidebar{
-    width: 100%;
+  .about p{
+    font-size: 1rem;
   }
 
   #theme-switch{
@@ -256,8 +304,20 @@ h2::before{
     justify-content: center;
     align-items: center;
   }
+}
+
+
+@media screen and (max-width: 478px){
+  .sidebar{
+    width: 100%;
+  }
 
   .animated-img{
     display: none;
+  }
+
+  .about p{
+    line-height: 1.4;
+    font-size: 1.2rem;
   }
 }

@@ -6,9 +6,8 @@
   <title>Peter's Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -40,22 +39,60 @@
     </ul>
   </nav>
   <div class="h2-anim"> 
-    <h2 data-text="Hi,I'm_Peter">Hi,I'm_Peter</h2>
+    <h2 data-text="Hi,I'm_Peter!!" class="hidden-b">Hi,I'm_Peter!!</h2>
   </div>
-  <section class="about">
-    <div class="animated-img">
-      <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+  <div>
+    <section class="about">
+      <div class="animated-img hidden-l">
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
 
-      <dotlottie-player src="https://lottie.host/feaf9d3b-10a8-408c-9c4b-b197bb2aaad5/gAbzeW1ezR.json" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></dotlottie-player>
+        <dotlottie-player src="https://lottie.host/feaf9d3b-10a8-408c-9c4b-b197bb2aaad5/gAbzeW1ezR.json" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></dotlottie-player>
+      </div>
+      <p class="hidden-r">I'm a computer science student with a deep-seated passion for the digital world.
+
+        While I enjoy unwinding with a good book, shooting hoops on the basketball court, or strategizing over a chessboard, my true fascination lies in the intricacies of web development and the broader landscape of computer science.
+        
+        I'm constantly exploring new technologies, languages, and frameworks, driven by a desire to create innovative and user-friendly online experiences. I believe that technology has the power to transform the way we live and work, and I'm excited to be part of that journey. </p>
+    </section>
+  </div>
+  <section>
+    <div class="projects">
+      <div class="h2-anim">
+      <h2 data-text="My_Projects..." class="hidden-b">My_Projects...</h2>
     </div>
-    <p>I'm a computer science student with a deep-seated passion for the digital world.
+    <div class="list-of-projects">
+      <div class="project-card hidden-l">
+        <h3>
+          Pet adoption website
+        </h3>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi culpa animi est vitae impedit harum, error temporibus nemo laborum et commodi in porro distinctio, accusantium quis doloremque nostrum quos quam?</p>
+      </div>
 
-      While I enjoy unwinding with a good book, shooting hoops on the basketball court, or strategizing over a chessboard, my true fascination lies in the intricacies of web development and the broader landscape of computer science.
-      
-      I'm constantly exploring new technologies, languages, and frameworks, driven by a desire to create innovative and user-friendly online experiences. I believe that technology has the power to transform the way we live and work, and I'm excited to be part of that journey. </p>
+      <div class="project-card hidden-l">
+        <h3>
+          Pet adoption website
+        </h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi culpa animi est vitae impedit harum, error temporibus nemo laborum et commodi in porro distinctio, accusantium quis doloremque nostrum quos quam?</p>
+      </div>
+
+      <div class="project-card hidden-r">
+        <h3>
+          Pet adoption website
+        </h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi culpa animi est vitae impedit harum, error temporibus nemo laborum et commodi in porro distinctio, accusantium quis doloremque nostrum quos quam?</p>
+      </div>
+
+      <div class="project-card hidden-r">
+        <h3>
+          Pet adoption website
+        </h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi culpa animi est vitae impedit harum, error temporibus nemo laborum et commodi in porro distinctio, accusantium quis doloremque nostrum quos quam?</p>
+      </div>
+    </div>
   </section>
 
   
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>

@@ -28,3 +28,24 @@ themeSwitch.addEventListener("click", () => {
   darkmode !== "active" ? enableDarkmode() : disableDarkmode()
 })
 
+//transitions
+
+const observer = new IntersectionObserver((entries) =>{
+  entries.forEach((entry) =>{
+    console.log(entry)
+    if (entry.isIntersecting){
+      entry.target.classList.add('show');
+    }else{
+      entry.target.classList.remove('show');
+    }
+  });
+});
+
+const hiddenElementsLeft = document.querySelectorAll('.hidden-l');
+const hiddenElementsRight = document.querySelectorAll('.hidden-r');
+const hiddenElementsBack = document.querySelectorAll('.hidden-b');
+
+
+hiddenElementsLeft.forEach((el) => observer.observe(el));
+hiddenElementsRight.forEach((el) => observer.observe(el));
+hiddenElementsBack.forEach((el) => observer.observe(el));
