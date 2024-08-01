@@ -106,7 +106,7 @@ nav li:first-child{
     align-items: center;
   }
 
-}
+
 
 #theme-switch svg{
   fill: var(--text-color);
@@ -433,7 +433,7 @@ body a{
     height: 500px;
     width: 400px;
   }
-
+}
 
 @media screen and (max-width:800px){
   .about p{
@@ -447,11 +447,6 @@ body a{
   .sidebar{
     width: 100%;
   }
-
-/*   .animated-img{
-    display: none;
-  } */
-
   .about p{
     line-height: 1.4;
     font-size: 1.2rem;
