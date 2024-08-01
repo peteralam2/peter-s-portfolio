@@ -8,8 +8,11 @@ function hideSidebar(){
   sidebar.style.display = "none"
 }
 
+//dark mode enable/disable
+
 let darkmode = localStorage.getItem('darkmode')
 const themeSwitch = document.getElementById('theme-switch')
+const sideThemeSwitch = document.getElementById('side-theme-switch')
 
 const enableDarkmode = () => {
   document.body.classList.add('darkmode')
@@ -28,7 +31,13 @@ themeSwitch.addEventListener("click", () => {
   darkmode !== "active" ? enableDarkmode() : disableDarkmode()
 })
 
-//transitions
+if(darkmode === "active") enableDarkmode()
+
+  sideThemeSwitch.addEventListener("click", () => {
+    darkmode = localStorage.getItem('darkmode')
+    darkmode !== "active" ? enableDarkmode() : disableDarkmode()
+  })
+
 
 const observer = new IntersectionObserver((entries) =>{
   entries.forEach((entry) =>{
